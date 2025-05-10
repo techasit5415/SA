@@ -7,7 +7,7 @@
     let remainingTime = 0;
     
     function goBack() {
-        goto('Menu');
+        goto('Recom');
     }
 
     function viewOrderDetails(order) {

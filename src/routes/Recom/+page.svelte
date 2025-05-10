@@ -11,9 +11,9 @@
       { id: 1, name: 'มัคคิอาโต้', englishName: 'Macchiato', price: 60, image: '/src/images/macchiato.png' },
       { id: 2, name: 'ลาเต้', englishName: 'Latte', price: 55, image: '/src/images/latte.png' },
       { id: 3, name: 'มอคค่า', englishName: 'Mocha', price: 60, image: '/src/images/mocha.png' },
-      { id: 4, name: 'มัคคิอาโต้', englishName: 'Macchiato', price: 40, image: '/src/images/macchiato.png' },
-      { id: 5, name: 'มัคคิอาโต้', englishName: 'Macchiato', price: 40, image: '/src/images/macchiato.png' },
-      { id: 6, name: 'ชานม', englishName: 'ชานม', price: 40, image: '/src/images/macchiato.png' },
+      { id: 4, name: 'ชาไทย', englishName: 'Thai Milk Tea', price: 40, image: '/src/images/thai.png' },
+      { id: 5, name: 'ชาเขียว', englishName: 'matcha tea', price: 60, image: '/src/images/matcha.png' },
+      { id: 6, name: 'ชานม', englishName: 'Milk Tea', price: 25, image: '/src/images/milktea.png' },
     ];
   
     // Order system
@@ -78,8 +78,8 @@ function goToPayment() {
     }
 }
     
-    const categories = ['Coffee', 'Tea', 'Milk', 'Soda'];
-    let selectedCategory = 'Coffee';
+    const categories = ['Recommend','Coffee', 'Tea', 'Milk', 'Soda'];
+    let selectedCategory = 'Recommend';
     let currentDate = new Date();
     
     // Format date: Friday, 20 May 2024
@@ -244,11 +244,12 @@ function goToPayment() {
     {#if showOrderPanel}
       <div class="order-panel">
         <div class="order-header">
-          <button class="back-button" on:click={toggleOrderPanel}>
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#333"/>
-            </svg>
-          </button>
+<button class="back-button" on:click={() => showPaymentPanel = false}>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z" />
+  </svg>
+</button>
+
           <h2>Order</h2>
         </div>
 
@@ -356,11 +357,12 @@ function goToPayment() {
     {#if showPaymentPanel}
     <div class="payment-panel">
       <div class="order-header">
-        <button class="back-button" on:click={() => showPaymentPanel = false}>
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 11H7.83L13.42L5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#333"/>
-          </svg>
-        </button>
+<button class="back-button" on:click={() => showPaymentPanel = false}>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z" />
+  </svg>
+</button>
+
         <h2>Payment</h2>
       </div>
       
@@ -534,47 +536,7 @@ function goToPayment() {
     </nav>
   </div>
 
-  <div class="profile-page">
-    <section class="profile-section">
-        <h2>My Profile</h2>
-        <div class="form-group">
-            <input type="text" placeholder="First Name" bind:value={firstName} />
-        </div>
-        <div class="form-group">
-            <input type="text" placeholder="Last Name" bind:value={lastName} />
-        </div>
-        <div class="form-group">
-            <input type="text" placeholder="Mobile Number" bind:value={mobileNumber} />
-        </div>
-        <button class="save-button" on:click={saveProfile}>Save</button>
-    </section>
 
-    <hr />
-
-    <section class="email-section">
-        <h2>Email</h2>
-        <div class="form-group">
-            <input type="email" placeholder="Email" bind:value={email} />
-        </div>
-        <div class="button-group">
-            <button class="verify-button" on:click={verifyEmail}>Verify Email</button>
-            <button class="save-button" on:click={saveEmail}>Save</button>
-        </div>
-    </section>
-
-    <hr />
-
-    <section class="password-section">
-        <h2>Password</h2>
-        <div class="form-group">
-            <input type="password" placeholder="Current Password" bind:value={currentPassword} />
-        </div>
-        <div class="form-group">
-            <input type="password" placeholder="New Password" bind:value={newPassword} />
-        </div>
-        <button class="save-button" on:click={savePassword}>Save</button>
-    </section>
-</div>
   
   <style>
   /* Base styles */

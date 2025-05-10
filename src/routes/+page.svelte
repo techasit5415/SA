@@ -3,7 +3,7 @@
 
   function handleLogin(provider) {
       console.log(`Continue with ${provider}`);
-      goto('/Menu'); // ไปยังหน้า Menu
+      goto('/Recom'); // ไปยังหน้า Menu
   }
 
   function handleSignUp() {
@@ -24,7 +24,7 @@
 
   function submitLogin() {
       console.log('Log in submitted');
-      goto('/Menu'); // ไปยังหน้า Menu
+      goto('/Recom'); // ไปยังหน้า Menu
   }
 
   let showRegisterForm = false; // state สำหรับแสดงฟอร์มสมัครสมาชิก
@@ -72,7 +72,7 @@
 {:else}
   <!-- Modal สำหรับการเข้าสู่ระบบ -->
   <div class="modal auth-modal">
-      <h1>Welcome!</h1>
+      <h1>Welcome  to Auto Cafe System!</h1>
       <p>Sign up or log in to continue</p>
 
       <div class="auth-buttons">
